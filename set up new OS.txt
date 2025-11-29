@@ -1,0 +1,75 @@
+This Doc. for Win11 (pro or enterprise for Active Directory)
+
+1. change pc name
+	OPTION1 (GUI):
+	go to this pc prop.
+	rename this pc (change the name)
+	restart computer
+	//check the new name
+	go to CMD and type >hostname
+
+	OPTION2 (CLI) powershell:
+	open powershell as adminstrator
+	> Rename-Computer -NewName "the_new_name" -Restart ("-Restart" to restart pc)
+
+2. set up static ip address
+	OPTION1 (GUI):
+	go to network settigns in settings
+	go to Ethernet
+	go to advance network settings
+	click on ethernet and go to more adapter options
+	click ipv4
+	add the ip, mask, gateway and dns (if you use active dir add the server ip as dns) (dns usually 8.8.8.8 google dns)
+	
+	OPTION2 (CLI) powershell:
+	open powershell as adminstrator
+	> netsh interface ip set address name="Ethernet_name_for_the_pc" static "ipv4" "mask" "default_gw" 
+	(get the name from advance network settings)
+	check the work in more adapter options in ipv4
+	
+3. add the computer to domain
+	OPTION1 (GUI):
+	go to this pc prop.
+	click advanced system settings
+	click computer name tab
+	click change
+	click domain
+	add domain name (ask for domain name)
+	click ok
+	restart computer
+	
+	OPTION2 (CLI) powershell:
+	open powershell as adminstrator
+	> Add-Computer -DomainName "your_domain.com" -Credential "your_domain\admin" -Restart
+	("your_domain.com" is the domain name, "your_domain\admin" is domain name\admin name, restart to restart the pc)
+	enter the admin password
+	
+///remove computer from domain
+	OPTION1 (GUI):
+	go to this pc prop.
+	click advanced system settings
+	click computer name tab
+	click change
+	click work group
+	add group name 
+	click ok
+	restart computer
+	
+///adding users local accounts
+	OPTION1 (GUI):
+	in search go to Edit local users and groups || win+R lusrmgr.msc
+	click Users
+	// here we will make new user
+	right click and choose new user
+	fill the inputs and click create
+	
+	//now we can add users to groups
+	click Groups
+	choose the group
+	click add
+	add the name and check name
+	//you can check the location also (you can choose either local or domain)
+	click ok
+	click apply then ok
+	
+
