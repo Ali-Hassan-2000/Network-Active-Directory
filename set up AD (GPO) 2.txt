@@ -1,0 +1,94 @@
+NOTE: any add or change on GPOs needs 90 min. to apply for users
+Group Policy Object (we already setup the GPO in AD)
+
+1.Create Group Policy Objects (password)
+	OPTION1 (GUI):
+	open Group Policy management
+	click on your domain name then domain then your domain name 
+	in your domain name you will see all the OUs
+	go to any OU and go to Group Policy Objects
+	here you can see all the default polices
+	//You can drag any GPO to the OU you want (you can use any of the Group Policy Objects to your OU)
+	
+	right click on your domain name
+	go to Create a GPO in this domain, .....
+	give a name for your policy
+	click ok
+	right click on the created policy
+	click edit
+	//computer conf. (global conf.) and user conf. (only when the user logged in)
+	//Policies (can't be edited by users) and Preferences (can be edited by users)
+	
+	//here we will do password policy
+	go to computer conf. then policies then windows settings 
+	go to security settings
+	go to account policies
+	click Password Policy
+	we can see the policies for the password (age, length, comp. , limits)
+	
+	//we will edit Min password policy
+	click on the policy
+	(✓) Define this policy setting
+	edit the input
+	click apply
+	click ok
+	
+2.Create Group Policy Objects (drive mapping)
+	right click on your domain name
+	go to Create a GPO in this domain, .....
+	give a name for your policy
+	click ok
+	right click on the created policy
+	click edit
+	here we will choose User conf. then Preferences then windows settings
+	right click Drive Maps then New then Mapped Drive
+	in location input the path (\\servername\folder)
+	Drive Letter choose Use first..... then in select input choose the drive letter
+	click ok
+	
+3.Create Group Policy Objects (Desktop Wallpaper Policy)
+	right click on your domain name
+	go to Create a GPO in this domain, .....
+	give a name for your policy
+	click ok
+	right click on the created policy
+	click edit
+	here we will choose User conf. then Policies then Administrative Templates: ....
+	go to Desktop then click Desktop
+	click on Desktop Wallpaper
+	click enabled
+	you can edit the wallpaper style
+	in wallpaper name input the path of the wallpaper
+	click apply
+	click ok
+	
+4.Create Group Policy Objects (Restrict Access to Control Panel)
+	right click on your domain name
+	go to Create a GPO in this domain, .....
+	give a name for your policy
+	click ok
+	right click on the created policy
+	click edit
+	here we will choose User conf. then Policies then Administrative Templates: ....
+	go to Control Panel
+	we will choose Prohibit access to control panel ......
+	click enabled
+	click apply
+	click ok
+	
+5.Create Group Policy Objects (Disable USB Storage)
+	right click on your domain name
+	go to Create a GPO in this domain, .....
+	give a name for your policy
+	click ok
+	right click on the created policy
+	click edit
+	here we will choose Computer conf. then Policies then Administrative Templates: ....
+	go to System then Removable Storage Access
+	we will choose All Removable Storage classes: Deny all access
+	click enabled
+	click apply
+	click ok
+	
+	
+you can create more group policies (creating process are the same)
