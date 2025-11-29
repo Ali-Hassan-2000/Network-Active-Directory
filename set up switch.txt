@@ -1,0 +1,32 @@
+This is for cisco switch
+
+//need console cable and flash drive
+
+first we will connect switch with pc and do backup
+	plug the cable
+	go to device manager
+	go to ports
+	get the COM number (in serial cable usually COM7)
+	open terminal emulator (putty)
+	go to serial tab
+	change serial line to COM number
+	go to session and select serial
+	click open
+
+Now start typing network commands (:
+
+	now we will enter privllige mode and insert the flash to copy the conf.bin file of the switch (backup copy)
+	2# copy usbflash0:cat9k_iosxe.17.03.03.SPA.bin flash: 
+	(flash0 is the port for flash, cat9....bin is the version for the company, flash: is where to copy the file)
+
+Now save the changes
+	2#copy "file_path" running-config (file path like usbflash0:/settings.txt) (copy stored in ram only)
+	2#startup-config (store in nvram)
+
+1.setup the switch
+	2# hostname "name"
+	2/3#ip address "ipv4" "mask" (if switch is 3 layer you can add ip)
+	if you add ip to switch you can check it in putty instead of serial use SSH and enter the ip
+	
+In the end you can sheck your work by using show command
+	2#show run || 3# do show run
