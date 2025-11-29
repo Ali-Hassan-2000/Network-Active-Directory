@@ -1,0 +1,73 @@
+NOTE: any add or change on GPOs needs 90 min. to apply for uses
+
+1. setup active directory domain services
+	OPTION1 (GUI):
+	open server manager
+	go to manage tab
+	go to add roles
+	click next
+	click next
+	click next
+	select active directory domain services
+	click add feature
+	// you can add remote access, Hyper-V
+	click next
+	group policy management should be (✓) (GPO)
+	click next
+	click next
+	click next
+	.
+	.
+	.
+	click install
+	after installing click on promot this server 
+	choose add a new forest
+	add the domain name for the dir. (Ex.: mydir.local)
+	click next
+	choose the last windows version
+	add password
+	click next
+	click next
+	.
+	.
+	.
+	click install
+	restart server
+	// you can check your work by going to Active directory Users and Computers
+	
+2. create organizational units (OUs) for regions
+	OPTION1 (GUI):
+	in active dir. go to your server domain
+	right-click on your server domain
+	click new
+	click organizational unit
+	add the name
+	click ok
+	// you can add OU inside OU
+	
+2. create groups in (OUs)
+	OPTION1 (GUI):
+	right-click on your OU
+	click new
+	click group
+	add the name
+	// in group scope we have options for group (uni. , global, domain local) (usually we use global)
+	// in group types we have 2 options for group (security or distribution) (usually we use security)
+	click ok
+	
+2. create users in (OUs)
+	OPTION1 (GUI):
+	right-click on your OU
+	click new
+	click user
+	add the Firstname, Lastname 
+	add User loggon name
+	click next
+	add password
+	// you can (✓) any of the check boxes
+	click finish
+	
+//you can move any computer in AD to the OU you want by:
+	right click on the computer
+	click move
+	choose the OU you want then click ok
