@@ -1,0 +1,61 @@
+NOTE: any add or change on GPOs needs 90 min. to apply for users
+
+NOTE: we have 2 types of services (shared for folder level) and (NTFS for folder and all its contents level) 
+NOTE: we have 2 types of sharing methods (mapped use for one time because if the pc restarted the share file will be removed unless we can setup a GPO for it in AD) and (Network use for one time setup and auto updated and permanent)
+
+1.create shared service
+	OPTION1 (GUI):
+	create a folder to apply the service on (folder can be in any path)
+	right click and go to prop.
+	go to sharing tab
+	go to advance sharing
+	(✓) share this folder
+	you can change the name and add comment
+	click permissions
+	choose the Group and the permissions
+	we will add (domain)
+	enter the name in the input
+	click check (choose domain Users)
+	click ok
+	click apply
+	click ok
+	click apply
+	click ok
+	
+2.create NTFS service
+	OPTION1 (GUI):
+	create a folder to apply the service on (folder can be in any path)
+	right click and go to prop.
+	go to Security tab
+	you can click Edit to give permissions to each group
+	
+3.access shared folders for users (mapped method)
+	OPTION1 (GUI):
+	right click on This pc
+	go to Map network drive
+	you can choose any letter drive
+	add the path of the folder you want to get access to in the folder input
+	(path is \\server_name\the_path_of_the_folder)
+	un check Reconnect at sign-in
+	click Finish
+	
+4.setup (Mapped method) permanent
+	OPTION1 (GUI):
+	open Group Policy management
+	click on your domain name then domain then your domain name
+	go to Group Policy Objects
+	right click and go to New
+	we will name it Mapped Drives
+	click ok
+	right click in the GPO and go to edit
+	here we will choose User conf. then Preferences then Windows settings
+	right click on Drive Maps then New then Mapping Drive
+	location is the path of the folder (path is \\server_name\the_path_of_the_folder)
+	give it a name in the Label as input
+	in Drive letter we will choose use and use the letter you want
+	click apply 
+	click ok
+	
+	//now apply this GPO to the users OU (drag it and drop it in the OU)
+	
+5. activate file server resource manager (FSRM)
