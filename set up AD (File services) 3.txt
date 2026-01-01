@@ -59,3 +59,49 @@ NOTE: we have 2 types of sharing methods (mapped use for one time because if the
 	//now apply this GPO to the users OU (drag it and drop it in the OU)
 	
 5. activate file server resource manager (FSRM)
+	OPTION1 (GUI):
+	first setup the service in server manager
+	
+	open server manager
+	go to manage tab
+	go to add roles
+	click next
+	click next
+	click next
+	expand file and storage  services
+	expand file and ISCSI services
+	(✓) file server resources manager
+	click add feature
+	click next
+	click next
+	click install
+	after install click close
+	
+	now we will use this service
+	
+	open file server resources manager
+	(Quota Management to setup the maximum capacity)
+	
+	Quota Management:
+	expand Quota Management
+	right click Quotas
+	click create Quota 
+	in Quota path add the file path (C:\path..)
+	choose define custom Quota properties
+	click custom properties
+	choose the data limit, add description
+	then click add
+	you can change the %
+	you can click send email (✓) and add the admin email
+	finish
+	
+	(file screening management to control the file type allowed)
+	go to file screens
+	add the file path (C:\path..)
+	first option to block the default big files (audio, video)
+	second option for custom file types
+	in custom files you can (✓) any file type you want to block (Ex.: video, exe, compressed files, image files, web page)
+	click ok
+	click create
+	in template name you can put the same file shared name
+	click ok

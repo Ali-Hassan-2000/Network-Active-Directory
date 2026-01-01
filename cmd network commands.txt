@@ -1,5 +1,5 @@
 > ipconfig
-> netsh (network shell used to manage network commands in powershell)
+q> netsh (network shell used to manage network commands in powershell)
 > gpupdate /force (force the GPO to update instead of waiting 90 min.)
 > hostname (get the host name of the computer or server)
 >
@@ -18,4 +18,3 @@
 >
 >
 >
-
