@@ -1,0 +1,36 @@
+NOTE: this setup for cisco phones
+NOTE: there are usually 3 rj ports for phones (bus topology logo is for POE), (laptop logo is for LAN access point), (AUX is for phone command line terminal)
+
+1. setup ip phone
+	connect the cable to the POE port in the phone
+	after phone is on choose the settings button to get the phone name
+	select phone info.
+	get the host name (any other info can be required Ex.: ip)
+	
+	//here we will you a cisco web for configuration (cisco unified cm administration)
+	go to the web (cisco unified cm administration) in any browser
+	sign in
+	in home page go to device
+	select phone
+	first input is (device name)
+	second drop down input is (ends with)
+	third input (enter the last 4 char. of the phone hostname)
+	click find button
+	//the device will show
+	click on the device hostname link
+	
+	// settings page will show
+	//you can add a description (Ex.: room number location)
+	//after finishing from the settings save your work
+	
+	click (apply config) button on the top
+	click ok
+	click (save) button on the top
+	
+	// now we will change the phone extensions
+	//on the left side of the settings page there is the phone extensions bar
+	click on the extension you want
+	
+	//here you can add description or change the user
+	
+	//save your settings in the end
