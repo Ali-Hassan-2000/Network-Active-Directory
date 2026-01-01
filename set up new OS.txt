@@ -71,5 +71,3 @@ This Doc. for Win11 (pro or enterprise for Active Directory)
 	//you can check the location also (you can choose either local or domain)
 	click ok
 	click apply then ok
-	
-

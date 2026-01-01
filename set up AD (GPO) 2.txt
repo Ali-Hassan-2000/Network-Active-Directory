@@ -91,4 +91,4 @@ Group Policy Object (we already setup the GPO in AD)
 	click ok
 	
 	
-you can create more group policies (creating process are the same)
+//you can create more group policies (creating process are the same)

@@ -60,8 +60,7 @@ NOTE: we have 2 types of sharing methods (mapped use for one time because if the
 	
 5. activate file server resource manager (FSRM)
 	OPTION1 (GUI):
-	first setup the service in server manager
-	
+	//first setup the service in server manager
 	open server manager
 	go to manage tab
 	go to add roles
@@ -77,12 +76,12 @@ NOTE: we have 2 types of sharing methods (mapped use for one time because if the
 	click install
 	after install click close
 	
-	now we will use this service
+	//now we will use this service
 	
 	open file server resources manager
-	(Quota Management to setup the maximum capacity)
+	//(Quota Management to setup the maximum capacity)
 	
-	Quota Management:
+	//Quota Management:
 	expand Quota Management
 	right click Quotas
 	click create Quota 
@@ -95,7 +94,7 @@ NOTE: we have 2 types of sharing methods (mapped use for one time because if the
 	you can click send email (✓) and add the admin email
 	finish
 	
-	(file screening management to control the file type allowed)
+	//(file screening management to control the file type allowed)
 	go to file screens
 	add the file path (C:\path..)
 	first option to block the default big files (audio, video)
