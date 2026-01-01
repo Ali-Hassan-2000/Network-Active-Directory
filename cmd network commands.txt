@@ -1,20 +1,30 @@
-> ipconfig
 q> netsh (network shell used to manage network commands in powershell)
+
 > gpupdate /force (force the GPO to update instead of waiting 90 min.)
+
 > hostname (get the host name of the computer or server)
->
->
->
->
->
->
->
->
->
->
->
->
->
+
+> ping "ip address or hostname" (check if ip is connected to network)
+	FLAG  
+	-t (infinite loop) 
+	-n "number" (count)
+	
+> ipconfig (device network info)
+	FLAG
+	/all (shows more info)
+	/release (reset or refresh network settings) works with DHCP ip not static ip
+	/renew (request a new ip from DHCP server) used after the previous command
+	/displaydns (show dns cache) show the search history
+	/flushdns (clear ip address or DNS records from the cache) used in 404 errors webs troubleshoot
+
+>  getmac (get mac address)
+
+> nslookup "ip address or domain name" (give the ip address for the domain or the opposite)
+
+> tracert "ip address or domain name" (trace route command)
+	FLAG //add before the ip or name
+	-h "number" (count n of hubs)
+
 >
 >
 >
