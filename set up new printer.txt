@@ -1,0 +1,69 @@
+NOTE: this setup for printers in general
+
+1. setup printer
+	//connect the cable to the printer
+	
+	go to the printer settings
+	go to networking settings
+	go to TCP/IP settings
+	go to IPV4 (set the ip manually)
+	go to primary and secondary DNS (set the ip manually)
+	
+	//now we will configure the printer in the server OS
+	
+	go to Print management
+	right click on your server name and click add printer
+	click add TCP/IP
+	click next
+	first input select TCP/IP device
+	second input add the ip address you assigned to the printer
+	click next and wait
+
+2. add the printer to the PC
+	//now we will ad the printer to the users
+	
+	go to control panel
+	go to devices and printer
+	go to printers and scanners
+	click on add device button (usually we will add the device manually)
+	click on add a new device manually
+	
+	you can add by the shared printer name (\\printer_server_name\printer_hostname)
+	// if you dont have shared printer add printer using the ip
+	
+	click add printer using an IP address or hostname
+	click next
+	in device type choose TCP/IP device
+	next input add the ip address you assigned to the printer
+	click next
+	
+	finish
+	
+	
+	
+	
+	
+NOTE: if printer is not showing on the network
+	(check the Ethernet cable light is working)
+	(ping the ip address of the printer)
+	(check the printer ip address by printing text page)
+
+NOTE: if printer is showing offline
+	(go to control panel)
+	(go to devices and printer)
+	(right click on your printer and uncheck the Use printer offline)
+	
+NOTE: if printer is not working
+	(Restart the print spooler service)
+	(Win+R and type services.msc)
+	(go to print spooler)
+	(right click and select restart)
+	
+NOTE: if printer is not showing on other PCs
+	(make sure that the printer sharing is enabled on the printer server)
+	(go to your server OS)
+	(go to control panel)
+	(go to network and sharing center)
+	(go to change advanced sharing settings)
+	(choose turn on file and printer sharing)
+	(now check by going to Win+R and type \\printer_server_name\printer_hostname)
