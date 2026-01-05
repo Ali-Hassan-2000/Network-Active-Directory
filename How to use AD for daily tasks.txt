@@ -1,0 +1,102 @@
+NOTE: go to view and choose advance features to show more options and details
+NOTE: for checking assets information's you can click on the asset (computer, OU, group) then edit any tab (or use attribute editor for info.)
+
+NOTE: service account (used by computer to provide a service Ex.: camera monitor), user account (used by a user)
+
+1. search for users/group/OU/ect..
+	OPTION1 (GUI):
+	in active dir. go to your server domain and right click
+	choose find
+	in find drop down choose what you want to look for (Ex.: search for person //User)
+	in name input enter the name (Ex.: first or last name //Ali)
+	click enter
+	
+2. (Unlock account) user locked his/her account then they remembered the password
+	OPTION1 (GUI):
+	// do step 1 first
+	
+	click on the user
+	go to account tab
+	(✓) Unlock user
+	click apply
+	
+	// Now the account is unlocked and the user can sign in
+	
+3. reset password for user account (password forgot)
+	OPTION1 (GUI):
+	// do step 1 first
+	
+	right click on the user
+	choose reset password
+	enter the new passowrd
+	(✓) the two fields
+	click ok
+	
+	//write the new password and give it to the user or let the user choose the password and write it for him/her
+	
+4. Edit/modify user account
+	OPTION1 (GUI):
+	// do step 1 first
+	
+	click on the user
+	
+	// if user moved to another role you can change the decription in general (for example)
+	
+	you can change anything in any tab
+	click apply
+	
+4. add user to group
+	OPTION1 (GUI):
+	// do step 1 first
+	
+	click on the user
+	go to Member Of tab
+	click add
+	enter the group name (you can add the first letters of the group and click Check Names)
+	choose the group
+	click ok
+	click ok
+	click apply
+	
+5. change user OU (if user is moving to different department/region)
+	OPTION1 (GUI):
+	// do step 1 first
+	
+	right click on the user
+	choose move
+	choose the new OU then choose the group in the OU
+	click ok
+	
+	// to check go to the new group and right click and choose refresh
+	
+6. creating service accounts
+	OPTION1 (GUI):
+	in active dir. go to your server domain and create OU for services groups
+	// organize and split the OU for users and OU for services (OU name Ex.: security account)
+	
+	create inside this OU a user (for the name give it special char. at the beginning for organizing the work Ex.: $AutoLogIn)
+	// go to setup AD doc. to create the OU, User
+	
+	repeat the name in User logon name (Ex.: $AutoLogIn)
+	go to next
+	give it password
+	(✓) for passowrd never ex piers only
+	click next
+	click finish
+	
+	click on the user
+	add description (very important)
+	click apply
+	click ok
+	
+	click on the user
+	click on account
+	click on Logon Hours (here adjust the time when the service show work)
+	click apply
+	click ok
+	
+7. Onboarding or Offboarding
+	OPTION1 (GUI):
+	click on any two user
+	go to thier Member Of (display the tow windows to show the two users)
+	copy and paste to the new user (in add part you can add more than one group in a time)
