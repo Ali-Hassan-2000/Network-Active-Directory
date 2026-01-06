@@ -25,7 +25,7 @@ Now save the changes
 
 1.setup the switch
 	2# hostname "name"
-	2/3#ip address "ipv4" "mask" (if switch is 3 layer you can add ip)
+	3#ip address "ipv4" "mask" (if switch is 3 layer you can add ip)
 	if you add ip to switch you can check it in putty instead of serial use SSH and enter the ip
 	
 In the end you can sheck your work by using show command

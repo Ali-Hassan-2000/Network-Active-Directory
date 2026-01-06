@@ -1,0 +1,28 @@
+NOTE: phone connections
+		1- POE port for eathernet
+		2- you can use access port to connect internet to other device (Ex.: pc) //to use 2 devices with 1 switch port
+		
+NOTE: we will use two Vlans (access vlan) and (voice Vlan)
+
+1.setup the voice & computer Vlan
+	Terminal Commands(Switch):
+	//Add Vlans
+	//go to mode 3 (configuration terminal)
+	3# vlan "vlan number" (Ex.: 100 //for access)
+	4# name "vlan name" (Ex.: computer)
+	4# exit
+	
+	3# vlan "vlan number" (Ex.: 200 //for voice)
+	4# name "vlan name" (Ex.: phone)
+	4# exit
+	
+	//Assign Vlans
+	//for computer
+	3# interface "switch port"
+	4# switchport mode access (for computer vlan)
+	4# switchport access vlan "computer vlan" (Ex.: 100)
+	//now for phone
+	4# switchport voice vlan 200
+	
+	//check your work
+	2# show interfaces "switch port" switchport
