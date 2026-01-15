@@ -1,0 +1,19 @@
+NOTE: is a full-disk encryption feature built into Microsoft Windows. It helps protect data by encrypting entire volumes 
+	(operating system and data drives) so that unauthorized users cannot read the data if the device is lost, stolen, 
+	or accessed without permission.
+
+1.Enabling BitLocker
+	In search type Manage BitLocker
+	click turn on bitlocker
+	here you can choose the way to save the recovery key (in MS account, in a file or flash drive or print a paper)
+	//in this Ex. I will use save a file (I will save it in flash)
+	click next
+	here you choose all the drive to encrypts or the used space only
+	//I will choose only used space
+	click next
+	click start encrypting (It will take time)
+	
+2.Disabling BitLocker
+	In search type Manage BitLocker
+	click turn off bitlocker
+	click turn off bitlocker

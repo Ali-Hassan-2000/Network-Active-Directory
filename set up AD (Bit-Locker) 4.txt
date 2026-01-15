@@ -1,0 +1,37 @@
+NOTE: any add or change on GPOs needs 90 min. to apply for users
+
+1.setup GPO to store Bit-locker 
+	OPTION1 (GUI):
+	create a folder to apply the service on (folder can be in any path)
+	right click and go to prop.
+	go to sharing tab
+	go to advance sharing
+	(✓) share this folder
+	you can change the name and add comment
+	click permissions
+	choose the Group and the permissions
+	we will add (domain)
+	enter the name in the input
+	click check (choose domain Users)
+	click ok
+	click apply
+	click ok
+	click apply
+	click ok
+	
+2.install Bit-locker on Windows server
+	OPTION1 (GUI):
+	
+	
+3.Enabling BitLocker
+	OPTION1 (GUI):
+	In search type Manage BitLocker
+	click turn on bitlocker
+	here you can choose the way to save the recovery key (in MS account, in a file or flash drive or print a paper)
+	//in this Ex. I will use save a file (I will save it in flash)
+	click next
+	here you choose all the drive to encrypts or the used space only
+	//I will choose only used space
+	click next
+	click start encrypting (It will take time)
+
