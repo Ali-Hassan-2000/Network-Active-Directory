@@ -1,37 +1,111 @@
 NOTE: any add or change on GPOs needs 90 min. to apply for users
 
-1.setup GPO to store Bit-locker 
+NOTE: is a full-disk encryption feature built into Microsoft Windows. It helps protect data by encrypting entire volumes 
+	(operating system and data drives) so that unauthorized users cannot read the data if the device is lost, stolen, 
+	or accessed without permission.
+
+1.setup GPO to store Bit-locker
 	OPTION1 (GUI):
-	create a folder to apply the service on (folder can be in any path)
-	right click and go to prop.
-	go to sharing tab
-	go to advance sharing
-	(✓) share this folder
-	you can change the name and add comment
-	click permissions
-	choose the Group and the permissions
-	we will add (domain)
-	enter the name in the input
-	click check (choose domain Users)
+	open Group Policy management
+	click on your domain name then domain then your domain name
+	right click on Group Policy Objects
+	click new
+	add name (Ex.: Backup Bitlocker)
 	click ok
+	right click on the policy (bitlocker policy)
+	click edit
+	
+	//computer conf. (global conf.) and user conf. (only when the user logged in)
+	//Policies (can't be edited by users) and Preferences (can be edited by users)
+	
+	in Group Policy management Editor click Computer configuration
+	click policies
+	click Administrative Templates
+	click Windows Components
+	Click Bitlocker Drive Encryption
+	Click Store Bitlocker recovery information................
+	choose Enabled
 	click apply
 	click ok
+	
+	Expand Bitlocker Drive Encryption
+	click Operating system Drivers
+	click Require additional authentication at startup
+	choose Enabled
+	make sure (✓) Allow Bitlocker without a compatible TPM..............
 	click apply
+	click ok
+	
+	click Choose how Bitlocker-protected operating system...............
+	choose Enabled
+	make sure (✓) Allow data recovery agent
+	make sure (✓) save Bitlocker recovery information...............
+	here you can choose (Store recovery password only or password and key)//we will use the default option
+	click apply
+	click ok
+	
+	//New we can apply this GPO to OUs
+	In Active Directory right click on the OU
+	click Link an Existing GPO...
+	click on the GPO (Backup Bitlocker)
 	click ok
 	
 2.install Bit-locker on Windows server
 	OPTION1 (GUI):
+	open server manager
+	go to manage tab
+	go to add roles
+	click next
+	click next
+	click next
+	click next
+	expand Remote Server Administrative Tools
+	expand Feature Administrative Tools
+	Bitlocker Drive Encryption (✓)
+	expand Bitlocker Drive Encryption
+	Bitlocker Recovery Password viewer
+	click add features
+	click next
+	click install
+	after installing click close
 	
+	reboot the server
 	
-3.Enabling BitLocker
+3.Enabling BitLocker on the server
 	OPTION1 (GUI):
 	In search type Manage BitLocker
 	click turn on bitlocker
+	
+	here you can choose how to unlock your drive at startup (USB flash or password)
+	//in this Ex. I will choose password (save this password)
+	Enter the password and click next
+	
 	here you can choose the way to save the recovery key (in MS account, in a file or flash drive or print a paper)
 	//in this Ex. I will use save a file (I will save it in flash)
 	click next
+	
 	here you choose all the drive to encrypts or the used space only
 	//I will choose only used space
 	click next
-	click start encrypting (It will take time)
-
+	
+	here you choose the encryption mode to use
+	//in this Ex. I will choose New encryption mode
+	click next
+	
+	make sure (✓) Run Bitlocker system check
+	click continue
+	
+	click on the notification that just showed up
+	restart the server
+	
+	in the reboot new we have to enter the Bitlocker password 
+	//enter the password that match with the key you see
+	
+	//to check the % progress of the encryption
+	open powershell and type
+	> Get-BitlockerVloume -MountPoint c:
+	
+4.View BitLocker password for users
+	In active directory right click on the computer and choose Prop.
+	choose Bitlocker Recovery tab
+	here (recovery password is the key) (Password ID is the password)
